@@ -1,5 +1,8 @@
 require("dotenv/config");
 const keys = require("./keys.js");
+const fs = require("fs");
+
+//spotify variables
 const Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
 
@@ -8,7 +11,7 @@ const Twitter = require("Twitter");
 const client = new Twitter(keys.twitter);
 const params = {screen_name: keys.twitter.user_name};
 
-//
+//arguments
 var arg1  = process.argv[2];
 var arg2 = process.argv[3]; // *** take multiple array elements ***
 
@@ -35,6 +38,6 @@ function getThisSong() {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
-        console.log(data);
+        console.log(data.tracks.items[0].album.artists[0].name);
     });
 }
