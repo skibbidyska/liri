@@ -24,10 +24,7 @@ getArg2();
 
 
 switch (arg1) {
-    case undefined:
-        console.log("display prompts");
-        break;
-    case "my-tweets":
+       case "my-tweets":
         getTwitterInfo();
         break;
     case "spotify-this-song":
@@ -162,6 +159,3 @@ function doWhatItSays() {
     });
 }
 
-function displayOptions() {
-
-}
