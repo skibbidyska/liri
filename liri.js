@@ -73,7 +73,7 @@ function getThisSong() {
         if (!error) {
             if (data.tracks.items.length != 0) {
                 for (var i = 0; i < data.tracks.items.length; i++) {
-                    console.log("##############################################################");
+                    console.log("################################################");
                     console.log("Artist name: " + data.tracks.items[i].album.artists[0].name);
                     console.log("Track name: " + data.tracks.items[i].name);
                     console.log("Album name; " + data.tracks.items[i].album.name);
@@ -85,13 +85,14 @@ function getThisSong() {
             }
             else {
                 spotify.search({type: 'track', query: "The Sign Ace of Base"}, function (error, data) {
-                    console.log("##############################################################");
+                    console.log("################################################");
                     console.log("Artist name: " + data.tracks.items[0].album.artists[0].name);
                     console.log("Album name; " + data.tracks.items[0].album.name);
                     console.log("Track name: " + data.tracks.items[0].name);
                     if (data.tracks.items[0].preview_url != undefined) {
                         console.log("Preview URL: " + data.tracks.items[0].preview_url);
                     }
+                    console.log("################################################");
                 });
             }
 
@@ -112,6 +113,7 @@ function getThisMovie() {
             var movie = JSON.parse(body);
 
             if (movie.Response != "False") {
+                console.log("################################################");
                 console.log("Title: " + movie.Title);
                 console.log("Year: " + movie.Year);
                 console.log("IMDB Rating: " + movie.Ratings[0].Value);
@@ -120,12 +122,15 @@ function getThisMovie() {
                 console.log("Language: " + movie.Language);
                 console.log("Plot: " + movie.Plot);
                 console.log("Actors: " + movie.Actors);
+                console.log("################################################");
+
             }
             else {
                 request("http://www.omdbapi.com/?apikey=" + apiKey + "&t=Mr.Nobody", function (error, response, body) {
                     var movie = JSON.parse(body);
 
                     if (movie.Response != "False") {
+                        console.log("################################################");
                         console.log("Title: " + movie.Title);
                         console.log("Year: " + movie.Year);
                         console.log("IMDB Rating: " + movie.Ratings[0].Value);
@@ -134,6 +139,7 @@ function getThisMovie() {
                         console.log("Language: " + movie.Language);
                         console.log("Plot: " + movie.Plot);
                         console.log("Actors: " + movie.Actors);
+                        console.log("################################################");
                     }
 
                 });
@@ -152,8 +158,8 @@ function doWhatItSays() {
             return console.log(error);
         }
         var dataArr = data.split(",");
-        var arg1 = dataArr[0];
-        var arg2 = dataArr[1];
+        arg1 = dataArr[0];
+        arg2 = dataArr[1];
         getThisSong();
 
     });
