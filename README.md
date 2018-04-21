@@ -1,9 +1,9 @@
-#LIRI.JS
+# LIRI.JS
 
 Liri is a text based application that uses the Spotify, Twitter, and OMDb APIs to search
 songs, movies, or view your last 20 tweets. Required Files are listed below
 
-##Required Files
+## Required Files
 You will need to include a .env file within the root folder for liri.  It will include
 the following information.
 ```
@@ -24,7 +24,7 @@ TWITTER_USER_NAME=your-twitter-handle
 API_KEY=your-omdb-api-key
 ```
 
-##Using Liri
+## Using Liri
 
 To use Liri you will need to start by installing the npm packages.
 
